@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?&family=Gamja+Flower&display=swap");
+
+:root {
+  --primary: #c04000;
+  --color100: #faf9f6;
+  --color900: #2b2b2b;
+  --color200: #f0eee5;
+  --color300: #cbc9be;
+  --color400: #73726b;
+  --accent1: #adebb3;
+  --accent2: #069494;
+  --accent3: #b8e3e9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color900);
+  background: var(--color100);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  /* background: none; */
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1 {
+  font-family: "Lora", serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color400);
+}
+
+h6 {
+  font-family: "Lora", serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* --- utility --- */
+
+.flex,
+.flex-s,
+.flex-m {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  gap: 0.5rem;
+}
+
+.flex-s {
+  gap: 1rem;
+}
+
+.flex-m {
+  gap: 1.5rem;
+}
+
+.a-active {
+  color: var(--primary);
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- components --- */
+
+.logo {
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 40px;
+  color: var(--primary);
+}
+
+.btn,
+.btn-sec {
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 380px;
+}
+
+.btn {
+  color: var(--color100);
+  background-color: var(--primary);
+}
+
+.btn-sec {
+  color: var(--primary);
+  background-color: var(--color100);
+  border: 1.5px solid var(--primary);
+}
+
+nav {
+  padding: 0.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+.toggle-container {
+  display: flex;
+  max-width: 400px;
+  padding: 0.25rem;
+  margin: 0 auto;
+  border-radius: 5rem;
+  background: var(--color200);
+  overflow: hidden;
+  border: 1.5px solid var(--color300);
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color400);
+}
+
+.active {
+  color: var(--color100);
+  background-color: var(--primary);
+  border-radius: 5rem;
+}
+
+/* --- Form Container --- */
+
+.form-container {
+  max-width: 90%;
+  max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 15px 50px 30px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 100px 110px 120px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.form-container h1 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  color: var(--primary);
+  position: relative;
+}
+
+.form-container h1::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.input-field {
+  background: #eaeaea;
+  margin: 15px 0;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+.input-field i {
+  margin-left: 15px;
+}
+
+.signup-container p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-field button {
+  flex-basis: 48%;
+  background: var(--primary);
+  color: var(--color100);
+  height: 40px;
+  border-radius: 40px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: background 1s;
+}
+
+.btn-field button.disable {
+  background: #eaeaea;
+  color: var(--primary);
+}

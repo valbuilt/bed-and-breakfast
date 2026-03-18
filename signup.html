@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/signup-anders/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/ee1d2b81ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">StayWell</a>
+      <ul class="nav-menu">
+        <li><a>Favorites</a></li>
+        <li><a href="trips-chengcheng.html">Trips</a></li>
+        <li><a>Profile</a></li>
+      </ul>
+    </nav>
+
+    <div class="signup-container">
+        <div class="form-container">
+      <h1 id="title">Sign Up</h1>
+      <form>
+        <div class="input-group">
+          <div class="input-field" id="nameField">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" placeholder="Name" />
+          </div>
+
+          <div class="input-field">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <p>Forgot Password? <a href=#>Click here</a></p>
+        </div>
+        <div class="btn-field">
+            <button type="button" id="signupBtn">Sign Up</button>
+            <button type="button" id="signinBtn" class="disable">Sign In</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let title = document.getElementById("title");
+
+
+signinBtn.onclick = function() {
+    nameField.style.display = "none";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+    title.innerHTML = "Sign In";
+    signupBtn.onclick = function() {
+        nameField.style.display = "block";
+        signupBtn.classList.remove("disable");
+        signinBtn.classList.add("disable");
+        title.innerHTML = "Sign Up";
+    }
+}
+
+
+  </script>
+</html>
