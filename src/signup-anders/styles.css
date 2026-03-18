@@ -248,6 +248,9 @@ nav {
   border-radius: 15px;
   display: flex;
   align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
 }
 input {
   width: 100%;
