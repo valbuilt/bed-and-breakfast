@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/booking-chengcheng/style.css">
+  <title>Room detail-booking page</title>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">StayWell</a>
+    <ul class="nav-menu">
+      <li><a>Favorites</a></li>
+      <li><a href="trips-chengcheng.html">Trips</a></li>
+      <li><a>Profile</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section class="gallery" id="gallery"></section>
+    
+    <div class="wrapper">
+      <section class="layout">
+        <div class="left-content">
+          <div class="main-info">
+            <h1 id="room-name"></h1>
+            <div class="flex">
+              <img src="icons/Map pin.svg">
+              <p id="location"></p>
+            </div>
+            <p id="room-info"></p>
+          </div>
+
+          <div class="description">
+            <h2>Description</h2>
+            <p id="room-description">Family-run Bed & Breakfast, surrounded by nature but within walking distance of the town center. Eco-friendly, great for couples or friends, and perfect base for all outdoor sports and visits to the nearby Arte Sella or the lakes of Levico and Caldonazzo. Bicycle rental is available in the nearby village of Borgo Valsugana.</p>
+            <div class="host-description">
+              <div class="flex-s host-title">
+                <img src="avatars/sara.svg">
+                <h3>Hosted by Sara</h3>
+              </div>
+              <p class="host-bio">Hi, I am Sara. I live upstairs and love baking sourdough. I love hosting travelers and sharing my favorite local spots. Breakfast is served in the garden room from 8-10am. </p>
+              <button class="btn-sec">Request to book</button>
+            </div>
+          </div>
+
+          <div class="amenities">
+            <h2>Amenities</h2>
+            <ul class="amenity-list">
+              <li class="flex">
+                <img src="icons/Wifi.svg">
+                <p>Fast Wifi</p>
+              </li>
+              <li class="flex">
+                <img src="icons/heater.svg">
+                <p>Heater</p>
+              </li>
+              <li class="flex">
+                <img src="icons/washer2.svg">
+                <p>Washer</p>
+              </li>
+              <li class="flex">
+                <img src="icons/book.svg">
+                <p>Dedicated Workspace</p>
+              </li>
+              <li class="flex">
+                <img src="icons/book.svg">
+                <p>Breakfast</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <form id="booking-form">
+            <div class="form-top">
+              <h2>Book your stay</h2>
+
+              <label>Check-in-date</label>
+              <input type="date">
+            
+              <label>Check-out-date</label>
+              <input type="date">
+            </div>
+
+            <div class="form-bottom">
+              <div class="price">
+                <h2>1 200 kr / night</h2>
+              </div>
+              <button id="confirm-booking" type="button" class="btn">Confirm booking</button>
+            </div>
+          
+          </form>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-info">
+          <div class="flex">
+            <img src="icons/Star.svg">
+            <p>4.8 (17)</p>
+          </div>
+          <a>Read all reviews</a>
+        </div>
+    
+        <ul class="review-swipe">
+          <li class="review">
+            <div class="flex-m">
+              <img src="avatars/mark.svg">
+              <div>
+                <p>Mark T.</p>
+                <h5>Jan 2026</h5>
+              </div>
+            </div>
+            <h6>“The eggs benedict were life-changing! Sara is such a warm host. The room was spotless and exactly like the photos.”</h6>
+          </li>
+          <li class="review">
+            <div class="flex-m">
+              <img src="avatars/emily.svg">
+              <div>
+                <p>Emily R.</p>
+                <h5>Dec 2025</h5>
+              </div>
+            </div>
+            <h6>“best guesthouse experience yet! Enjoying the BBQ with the ocean view was the highlight of our trip. Highly recommend!”</h6>
+          </li>
+          <li class="review">
+            <div class="flex-m">
+              <img src="avatars/emily.svg">
+              <div>
+                <p>Mark T.</p>
+                <h5>Oct 2025</h5>
+              </div>
+            </div>
+            <h6>“The eggs benedict were life-changing! Sara is such a warm host. The room was spotless and exactly like the photos.”</h6>
+          </li>
+        </ul>
+      </section>
+
+      <section class="location">
+        <h2>Location</h2>
+        <p>Borgo Valsugana, Trentino-Alto Adige, Italy</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.750579609265!2d11.459144275751118!3d46.03612509509841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477891d4a8346821%3A0x4a933835fbf1a408!2sLa%20Tana%20del%20Lupo!5e0!3m2!1sen!2sno!4v1773679738236!5m2!1sen!2sno" loading="lazy"></iframe>
+      </section>
+        
+    </div>
+
+    <div class="mobil-book hidden">
+      <h2>1 200 kr / night</h2>
+      <button id="open-form" class="btn">Book</button>
+    </div>
+     
+    <dialog id="dialog-window" class="dialog-window">
+      <button id="dialog-close" class="dialog-close">x</button>
+      <div class="dialog-content">
+        <h2>🎉 Booking Confirmed!</h2>
+        <p>Your stay is book💖  09/05/2026 - 14/05/2026</p>
+        <p>We can't wait to host you -- see you soon!✨</p>
+    </dialog>
+    </div>
+
+  </main>
+
+  <script type="module" src="/src/booking-chengcheng/booking.ts"></script>
+  
+</body>
+</html>

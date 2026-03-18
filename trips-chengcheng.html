@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/booking-chengcheng/style.css">
+  <title>Trips page</title>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">StayWell</a>
+    <ul class="nav-menu">
+      <li><a>Favorites</a></li>
+      <li><a href="trips-chengcheng.html" class="a-active">Trips</a></li>
+      <li><a>Profile</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="wrapper">
+      <div class="toggle-container">
+        <button id="upcomingBtn" class="toggle-btn active">Upcoming</button>
+        <button id="pastBtn" class="toggle-btn">Past Trips</button>
+      </div>
+
+      <div id="upcomingContent" class="content">
+        <article class="card">
+          <div class="card-top">
+            <h3 class="card-date">09.05.2026 - 14.05.2026</h3>
+            <button class="btn">Edit</button>
+          </div>
+          <div class="flex-m">
+            <div class="card-img">
+              <img src="room-photos/room-1/1.jpeg" alt="room image">
+            </div>
+            <div>
+              <h3>La Tana del Lupo B&B</h3>
+              <div class="flex">
+                <img src="icons/Map pin.svg">
+                <p>Borgo Valsugana, Italy</p>
+              </div>
+              <p>1 bedroom · 1 bed · 2 guests</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="pastContent" class="content hidden">
+        <article class="card">
+          <div class="card-top">
+            <h3 class="card-date">09.05.2026 - 14.05.2026</h3>
+            <button class="btn">Review</button>
+          </div>
+          <div class="flex-m">
+            <div class="card-img">
+              <img src="room-photos/room-1/1.jpeg" alt="room image">
+            </div>
+            <div>
+              <h3>La Tana del Lupo B&B</h3>
+              <div class="flex">
+                <img src="icons/Map pin.svg">
+                <p>Borgo Valsugana, Italy</p>
+              </div>
+              <p>1 bedroom · 1 bed · 2 guests</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="src/booking-chengcheng/trips.ts"></script>
+  
+</body>
+</html>

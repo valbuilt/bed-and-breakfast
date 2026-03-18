@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?&family=Gamja+Flower&display=swap");
+
+:root {
+  --primary: #c04000;
+  --color100: #faf9f6;
+  --color900: #2b2b2b;
+  --color200: #f0eee5;
+  --color300: #cbc9be;
+  --color400: #73726b;
+  --accent1: #adebb3;
+  --accent2: #069494;
+  --accent3: #b8e3e9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color900);
+  background: var(--color100);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  /* background: none; */
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1 {
+  font-family: "Lora", serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color400);
+}
+
+h6 {
+  font-family: "Lora", serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* --- utility --- */
+
+.flex,
+.flex-s,
+.flex-m {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  gap: 0.5rem;
+}
+
+.flex-s {
+  gap: 1rem;
+}
+
+.flex-m {
+  gap: 1.5rem;
+}
+
+.a-active {
+  color: var(--primary);
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- components --- */
+
+.logo {
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 40px;
+  color: var(--primary);
+}
+
+.btn,
+.btn-sec {
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 380px;
+}
+
+.btn {
+  color: var(--color100);
+  background-color: var(--primary);
+}
+
+.btn-sec {
+  color: var(--primary);
+  background-color: var(--color100);
+  border: 1.5px solid var(--primary);
+}
+
+nav {
+  padding: 0.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+.toggle-container {
+  display: flex;
+  max-width: 400px;
+  padding: 0.25rem;
+  margin: 0 auto;
+  border-radius: 5rem;
+  background: var(--color200);
+  overflow: hidden;
+  border: 1.5px solid var(--color300);
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color400);
+}
+
+.active {
+  color: var(--color100);
+  background-color: var(--primary);
+  border-radius: 5rem;
+}
+
+/* --- booking page --- */
+
+.gallery {
+  max-width: 1100px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.25rem;
+}
+
+.gallery > :first-child {
+  grid-row: span 2;
+  grid-column: span 2;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.gallery > :nth-child(3) {
+  border-top-right-radius: 1rem;
+}
+
+.more-photos img {
+  border-bottom-right-radius: 1rem;
+}
+
+.more-photos {
+  position: relative;
+}
+
+.more-photos button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.wrapper {
+  padding-inline: 1rem;
+}
+
+.layout {
+  display: flex;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 1rem auto;
+}
+
+.main-info h1 {
+  margin-bottom: 0.25rem;
+}
+
+.description {
+  background-color: var(--color200);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-block: 1.5rem 3rem;
+}
+
+.host-description {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.host-title {
+  border-top: 1.5px solid var(--color300);
+  padding-top: 1rem;
+}
+
+.amenity-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.reviews,
+.location {
+  max-width: 1100px;
+  margin-inline: auto;
+  margin-block-start: 4rem;
+}
+
+.review,
+.review-name-time {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-info a {
+  text-decoration: underline;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1.5px solid var(--color300);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.review-swipe {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#booking-form {
+  position: sticky;
+  width: 320px;
+  height: 360px;
+  flex-shrink: 0;
+  padding: 1rem;
+  border: 1.5px solid var(--color300);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.form-top,
+.form-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.price {
+  text-align: right;
+}
+
+.location {
+  margin-bottom: 6rem;
+}
+
+.location iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 1rem;
+  filter: sepia(10%) saturate(85%) brightness(98%);
+  z-index: 2;
+}
+
+/* --- trips page --- */
+.content {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--color300);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-top {
+  padding-block-end: 0.5rem;
+  border-bottom: 1.5px solid var(--color300);
+  margin-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dialog-window {
+  max-width: 500px;
+  margin: auto;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  border: 1.5px solid var(--color300);
+  background-color: var(--color200);
+}
+
+.dialog-close {
+  margin-left: auto;
+  display: block;
+  font-size: 22px;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+dialog.dialog-window::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+}
+
+.more-photos button {
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .gallery > * {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    min-width: 100%;
+  }
+
+  .gallery > :first-child,
+  .gallery > :nth-child(3),
+  .more-photos img {
+    border-radius: 0;
+  }
+
+  .moreImages {
+    display: block !important;
+  }
+
+  .more-photos button {
+    display: none;
+  }
+
+  .mobil-book {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 2rem 1rem;
+    border-top: 1.5px solid var(--color300);
+    z-index: 99;
+    background-color: var(--color100);
+  }
+
+  #booking-form {
+    display: none;
+  }
+
+  #booking-form.show {
+    display: flex;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    padding: 2rem;
+    background-color: var(--color100);
+  }
+
+  .review-swipe {
+    flex-direction: column;
+  }
+}
