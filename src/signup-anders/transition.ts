@@ -1,5 +1,5 @@
-const signupBtn = document.getElementById("signupBtn") as HTMLElement;
-const signinBtn = document.getElementById("signinBtn") as HTMLElement;
+const signupBtn = document.getElementById("signupBtn") as HTMLButtonElement;
+const signinBtn = document.getElementById("signinBtn") as HTMLButtonElement;
 const nameField = document.getElementById("nameField") as HTMLElement;
 const title = document.getElementById("title") as HTMLElement;
 
