@@ -48,7 +48,7 @@ select {
   font: inherit;
   border: none;
   outline: none;
-  /* background: none; */
+  background: none;
 }
 
 button,
@@ -138,6 +138,10 @@ p {
   color: var(--primary);
 }
 
+.hamburger {
+  display: none;
+}
+
 .btn,
 .btn-sec {
   font-weight: 500;
@@ -156,6 +160,11 @@ p {
   color: var(--primary);
   background-color: var(--color100);
   border: 1.5px solid var(--primary);
+}
+
+.btn-ter {
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 nav {
@@ -412,6 +421,14 @@ nav {
   justify-content: space-between;
 }
 
+.card-top h3 {
+  margin-right: auto; 
+}
+
+.card-top button {
+  margin-left: 1rem;
+}
+
 .dialog-window {
   max-width: 500px;
   margin: auto;
@@ -447,6 +464,37 @@ dialog.dialog-window::backdrop {
 }
 
 @media (max-width: 768px) {
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    display: none;
+    z-index: 99;
+    background-color: var(--color100);
+    padding-block: 1rem;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  .nav-menu a {
+    padding: 1rem;
+    width: 100vw;
+  }
+
+  .nav-menu.menu-active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
   .gallery {
     display: flex;
     flex-wrap: nowrap;
