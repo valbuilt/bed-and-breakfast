@@ -209,15 +209,14 @@ nav {
 /* --- Form --- */
 
 .form-container {
-  max-width: 90%;
   max-width: 450px;
   position: absolute;
   top: 50%;
   left: 50%;
-  border-radius: 15px 50px 30px;
+  border-radius: 1rem;
   transform: translate(-50%, -50%);
   background: #fff;
-  padding: 100px 110px 120px;
+  padding: 4rem;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -293,8 +292,8 @@ input {
 
 @media (max-width: 768px) {
   .form-container {
-    padding: 80px 20px 60px;
-    max-width: 90%;
+    padding: 1rem;
+    width: 90%;
   }
 
   .btn-field {

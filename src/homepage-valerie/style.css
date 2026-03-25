@@ -201,6 +201,13 @@ header {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
+.room-card-1 {
+  background-color: #c04000;
+  width: 300px;
+  padding: 1rem;
+  margin-inline: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   .searchBox form {
     flex-direction: column;

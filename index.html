@@ -2,11 +2,145 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>staywell</title>
+    <link rel="stylesheet" href="/src/homepage-valerie/style.css" />
+    <link rel="stylesheet" href="/src/booking-chengcheng/style.css">
+    <title>StayWell Home Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
   </head>
-  <body>
-    <script type="module" src="/src/main.ts"></script>
+
+<body>
+    <nav>
+      <a href="/" class="logo">StayWell</a>
+      <ul class="nav-menu">
+        <li><a>Favorites</a></li>
+        <li><a href="trips-chengcheng.html">Trips</a></li>
+        <li><a href="signup.html">Login</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <img src="icons/menu.svg">
+      </button>
+    </nav>
+    </header>
+    
+      <div class="hero">
+      <img src="assets/bed and breakfast hero3.jpg" alt="Breakfast served in bed" />
+       <div class="searchBox">
+    <form>
+      <div class="searchLeft">
+        <h3>Stay at your favourite place</h3>
+        <input type="text" placeholder="Location" />
+        <input type="text" placeholder="Dates" />
+        <input type="number" placeholder="Guests" min="1" />
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="searchRight">
+        <h3>Stay over comfortably</h3>
+        <input type="number" placeholder="Rooms" min="1" />
+        <input type="number" placeholder="Beds" min="1" />
+        <button type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+   
+
+
+  <main>
+
+<div class="homeCardContainer">
+
+  <div class="homeCard">
+    <a href="./" class="categoryLink">
+      <div class="cardContent">
+        <h2>Nearby</h2>
+        <p>Find stays close to your location.</p>
+      </div>
+
+      <div class="cardCTA">
+        <button type="button">Explore</button>
+      </div>
+
+      <div class="cardImage">
+        <img src="./assets/bed and breakfast hero.jpg" alt="Nearby Rooms" />
+      </div>
+    </a>
+  </div>
+
+  <div class="homeCard">
+    <a href="./" class="categoryLink">
+      <div class="cardContent">
+        <h2>Popular</h2>
+        <p>Rooms with the best ratings.</p>
+      </div>
+
+      <div class="cardCTA">
+        <button type="button">Explore</button>
+      </div>
+
+      <div class="cardImage">
+        <img src="./assets/bed and breakfast hero.jpg" alt="Popular Rooms" />
+      </div>
+    </a>
+  </div>
+
+</div>
+        
+<section class="welcomeSection">
+  <div class="container">
+    <h2>Discover affordable Bed & Breakfasts with character</h2>
+    <p>
+      
+     No matter if you're looking for something nearby or the most loved spots, 
+      we make sure you stay well!
+    </p>
+  </div>
+</section>
+
+<!-- I added this section to show the 3 rooms I create (right now only 1), so clicking on the room card shoud be linked to my page~ -->
+<section>
+  <h1>Editor's picks</h1>
+  <div>
+    <a href="booking-chengcheng.html">
+      <div class="room-card-1">
+        <h2>Demo card title</h2>
+        <p>placeholder room card for linking to my page~</p>
+      </div>
+    </a> 
+  </div>
+</section>
+
+  </main>
+
+   <footer>
+    <div class="footerContainer">
+      
+      <div class="footerColumn">
+        <h3>Follow us on</h3>
+        <div class="socialIcons">
+          <img
+            src="../assets/images/insta-icon.png"
+            alt="Instagram"
+            class="footerIcon"
+          />
+          <img
+            src="../assets/images/fb-icon.png"
+            alt="Facebook"
+            class="footerIcon"
+          />
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script type="module" src="/src/homepage-valerie/index.ts"></script>
   </body>
+
+ 
 </html>
