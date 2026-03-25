@@ -5,10 +5,12 @@ const gallery = document.getElementById("gallery") as HTMLElement;
 const roomName = document.getElementById("room-name") as HTMLElement;
 const locationEl = document.getElementById("location") as HTMLElement;
 const roomInfo = document.getElementById("room-info") as HTMLElement;
+const hamburger = document.getElementById("hamburger") as HTMLElement;
+const navMenu = document.querySelector(".nav-menu") as HTMLElement;
 
-if (!gallery || !roomName || !locationEl || !roomInfo) {
-  throw new Error("One or more DOM elements not found");
-}
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("menu-active");
+});
 
 async function loadRoom(id: number) {
   try {
@@ -65,19 +67,9 @@ async function loadRoom(id: number) {
 loadRoom(1);
 
 // Handle booking-confirmation dialog
-const confirmBooking = document.getElementById(
-  "confirm-booking",
-) as HTMLElement | null;
-const dialogWindow = document.getElementById(
-  "dialog-window",
-) as HTMLDialogElement | null;
-const dialogClose = document.getElementById(
-  "dialog-close",
-) as HTMLElement | null;
-
-if (!confirmBooking || !dialogWindow || !dialogClose) {
-  throw new Error("Booking dialog elements not found");
-}
+const confirmBooking = document.getElementById("confirm-booking") as HTMLElement;
+const dialogWindow = document.getElementById("dialog-window") as HTMLDialogElement;
+const dialogClose = document.getElementById("dialog-close") as HTMLElement;
 
 confirmBooking.addEventListener("click", () => {
   dialogWindow.showModal();
@@ -94,10 +86,6 @@ dialogClose.addEventListener("click", () => {
 const openForm = document.getElementById("open-form") as HTMLElement;
 const bookingForm = document.getElementById("booking-form") as HTMLElement;
 const mobilBook = document.querySelector(".mobil-book") as HTMLElement;
-
-if (!openForm || !bookingForm || !mobilBook) {
-  throw new Error("Required elements not found");
-}
 
 openForm.addEventListener("click", () => {
   bookingForm.classList.add("show");

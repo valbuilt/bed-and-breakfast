@@ -1,7 +1,18 @@
+const hamburger = document.getElementById("hamburger") as HTMLElement;
+const navMenu = document.querySelector(".nav-menu") as HTMLElement;
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("menu-active");
+});
+
+
+
 const upcomingBtn = document.getElementById("upcomingBtn") as HTMLButtonElement;
 const pastBtn = document.getElementById("pastBtn") as HTMLButtonElement;
 
-const upcomingContent = document.getElementById("upcomingContent") as HTMLElement;
+const upcomingContent = document.getElementById(
+  "upcomingContent",
+) as HTMLElement;
 const pastContent = document.getElementById("pastContent") as HTMLElement;
 
 if (upcomingBtn && pastBtn && upcomingContent && pastContent) {
