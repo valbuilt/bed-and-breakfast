@@ -1,5 +1,5 @@
-import type { Room } from "../type";
-import { getRoomById } from "../api";
+import type { Room } from "../types/type";
+import { getRoomById } from "../api/api";
 
 export async function loadGallery(id: number) {
   const gallery = document.getElementById("gallery") as HTMLElement | null;
@@ -33,7 +33,9 @@ export async function loadGallery(id: number) {
     });
 
     // "See all photos" button
-    const showMoreBtn = document.getElementById("showMoreBtn") as HTMLButtonElement | null;
+    const showMoreBtn = document.getElementById(
+      "showMoreBtn",
+    ) as HTMLButtonElement | null;
     const moreImages = document.querySelectorAll(".moreImages");
 
     if (showMoreBtn && moreImages.length > 0) {

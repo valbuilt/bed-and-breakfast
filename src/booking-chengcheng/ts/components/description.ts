@@ -1,8 +1,10 @@
-import type { Room } from "../type";
-import { getRoomById } from "../api";
+import type { Room } from "../types/type";
+import { getRoomById } from "../api/api";
 
 export async function loadDes(id: number) {
-  const container = document.getElementById("description") as HTMLElement | null;
+  const container = document.getElementById(
+    "description",
+  ) as HTMLElement | null;
 
   if (!container) {
     console.error("Description container not found");

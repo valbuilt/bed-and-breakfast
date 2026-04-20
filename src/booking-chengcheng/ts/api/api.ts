@@ -1,4 +1,4 @@
-import type { Room } from "./type";
+import type { Room } from "../types/type";
 
 export async function getRoomById(id: number): Promise<Room> {
   try {
@@ -10,9 +10,8 @@ export async function getRoomById(id: number): Promise<Room> {
 
     const data: Room = await res.json();
     return data;
-    
   } catch (error) {
     console.error("Error fetching room:", error);
-    throw error; 
+    throw error;
   }
 }

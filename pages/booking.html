@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/src/booking-chengcheng/style.css">
+  <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css">
   <title>Room detail-booking page</title>
 </head>
 <body>
@@ -11,11 +11,11 @@
     <a href="/" class="logo">StayWell</a>
     <ul class="nav-menu">
       <li><a>Favorites</a></li>
-      <li><a href="trips-chengcheng.html">Trips</a></li>
-      <li><a href="signup.html">Login</a></li>
+      <li><a href="/pages/trips.html">Trips</a></li>
+      <li><a href="/pages/signup.html">Login</a></li>
     </ul>
-    <button class="hamburger" id="hamburger">
-      <img src="icons/menu.svg">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <img src="icons/menu.svg" alt="">
     </button>
   </nav>
   
@@ -33,23 +33,23 @@
             <h2>Amenities</h2>
             <ul class="amenity-list">
               <li class="flex">
-                <img src="icons/wifi.svg">
+                <img src="/icons/wifi.svg" alt="">
                 <p>Fast Wifi</p>
               </li>
               <li class="flex">
-                <img src="icons/heater.svg">
+                <img src="/icons/heater.svg" alt="">
                 <p>Heater</p>
               </li>
               <li class="flex">
-                <img src="icons/washer2.svg">
+                <img src="/icons/washer2.svg" alt="">
                 <p>Washer</p>
               </li>
               <li class="flex">
-                <img src="icons/book.svg">
+                <img src="/icons/book.svg" alt="">
                 <p>Dedicated Workspace</p>
               </li>
               <li class="flex">
-                <img src="icons/book.svg">
+                <img src="/icons/book.svg" alt="">
                 <p>Breakfast</p>
               </li>
             </ul>
@@ -61,11 +61,11 @@
             <div class="form-top">
               <h2>Book your stay</h2>
 
-              <label>Check-in-date</label>
-              <input type="date">
+              <label for="checkin">Check-in-date</label>
+              <input type="date" id="checkin">
             
-              <label>Check-out-date</label>
-              <input type="date">
+              <label for="checkout">Check-out-date</label>
+              <input type="date" id="checkout">
             </div>
 
             <div class="form-bottom">
@@ -83,7 +83,7 @@
         <h2>Reviews</h2>
         <div class="review-info">
           <div class="flex">
-            <img src="icons/star.svg">
+            <img src="icons/star.svg" alt="">
             <p>4.8 (17)</p>
           </div>
           <a>Read all reviews</a>
@@ -92,7 +92,7 @@
         <ul class="review-swipe">
           <li class="review">
             <div class="flex-m">
-              <img src="avatars/mark.svg">
+              <img src="avatars/mark.svg" alt="">
               <div>
                 <p>Mark T.</p>
                 <h5>Jan 2026</h5>
@@ -102,7 +102,7 @@
           </li>
           <li class="review">
             <div class="flex-m">
-              <img src="avatars/emily.svg">
+              <img src="avatars/emily.svg" alt="">
               <div>
                 <p>Emily R.</p>
                 <h5>Dec 2025</h5>
@@ -112,7 +112,7 @@
           </li>
           <li class="review">
             <div class="flex-m">
-              <img src="avatars/emily.svg">
+              <img src="avatars/emily.svg" alt="">
               <div>
                 <p>Mark T.</p>
                 <h5>Oct 2025</h5>
@@ -126,7 +126,7 @@
       <section class="location">
         <h2>Location</h2>
         <p>Borgo Valsugana, Trentino-Alto Adige, Italy</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.750579609265!2d11.459144275751118!3d46.03612509509841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477891d4a8346821%3A0x4a933835fbf1a408!2sLa%20Tana%20del%20Lupo!5e0!3m2!1sen!2sno!4v1773679738236!5m2!1sen!2sno" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.750579609265!2d11.459144275751118!3d46.03612509509841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477891d4a8346821%3A0x4a933835fbf1a408!2sLa%20Tana%20del%20Lupo!5e0!3m2!1sen!2sno!4v1773679738236!5m2!1sen!2sno" loading="lazy" title="Map of Borgo Valsugana location"></iframe>
       </section>
         
     </div>
@@ -147,7 +147,7 @@
 
   </main>
 
-  <script type="module" src="/src/booking-chengcheng/booking.ts"></script>
+  <script type="module" src="/src/booking-chengcheng/ts/pages.ts/booking.ts"></script>
   
 </body>
 </html>
