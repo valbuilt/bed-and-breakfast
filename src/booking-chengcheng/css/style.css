@@ -307,7 +307,7 @@ nav {
 }
 
 .reviews,
-.location {
+.map {
   max-width: 1100px;
   margin-inline: auto;
   margin-block-start: 4rem;
@@ -344,7 +344,7 @@ nav {
   margin-top: 1rem;
 }
 
-#booking-form {
+.booking-form {
   position: sticky;
   width: 320px;
   height: 360px;
@@ -370,11 +370,11 @@ nav {
   text-align: right;
 }
 
-.location {
+.map {
   margin-bottom: 6rem;
 }
 
-.location iframe {
+.map iframe {
   width: 100%;
   height: 300px;
   border: 0;
@@ -536,11 +536,11 @@ dialog.dialog-window::backdrop {
     background-color: var(--color100);
   }
 
-  #booking-form {
+  .booking-form {
     display: none;
   }
 
-  #booking-form.show {
+  .booking-form.show {
     display: flex;
     position: fixed;
     margin: 0;

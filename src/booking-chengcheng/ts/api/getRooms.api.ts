@@ -7,11 +7,10 @@ export async function getRoomById(id: number): Promise<Room> {
     if (!res.ok) {
       throw new Error(`Room with id ${id} not found (status ${res.status})`);
     }
+     
+    return await res.json();
 
-    const data: Room = await res.json();
-    return data;
   } catch (error) {
-    console.error("Error fetching room:", error);
     throw error;
   }
 }

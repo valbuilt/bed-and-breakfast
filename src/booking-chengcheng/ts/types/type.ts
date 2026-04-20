@@ -26,3 +26,12 @@ export type Room = {
   reviews: Review[];
   map: string;
 };
+
+export type Booking = {
+  id: number;
+  userName: string;
+  password: string;
+  email: string;
+  checkin: string;
+  checkout: string;
+}
