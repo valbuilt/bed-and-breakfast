@@ -1,5 +1,6 @@
 import { getRoomById } from "../api/getRooms.api";
 import { getBookingById } from "../api/getBookings.api";
+import { deleteBooking } from "../api/deleteBookings.api";
 import { renderBookingCard } from "../components/bookingCard";
 
 
@@ -33,10 +34,6 @@ if (!upcomingContent || !pastContent || !upcomingBtn || !pastBtn) {
 
 // -----------------------
 
-const userId = localStorage.getItem("id")
-
-// -----------------------
-
 async function loadBookingCards(id: number) {
   if (!upcomingContent) {
     throw new Error("upcomig trips not found in DOM");
@@ -56,6 +53,22 @@ async function loadBookingCards(id: number) {
 }
 
 loadBookingCards(1);
+
+// ---------------------------
+
+const deleteBtn = document.querySelectorAll(".deleteBtn");
+const editBtn = document.querySelectorAll(".editBtn");
+const cardDate = document.querySelector(".card-date");
+
+deleteBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+  deleteBooking(120);
+
+
+
+  })
+})
 
 
 

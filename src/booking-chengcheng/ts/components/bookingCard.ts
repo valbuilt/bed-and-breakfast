@@ -5,26 +5,28 @@ export function renderBookingCard(room: Room) {
   wrapper.classList.add("content");
 
   wrapper.innerHTML = `
-    <div class="card">
+    <article class="card">
       <div class="card-top">
         <h3 class="card-date">09.05.2026 - 14.05.2026</h3>
-        <button class="btn-sec">Edit</button>
-        <button class="btn-ter">Delete</button>
+        <button class="btn-sec deleteBtn"}">Delete</button>
       </div>
       <div class="flex-m">
         <div class="card-img">
           <img src="${room.img[0]}" alt="room hero image">
         </div>
-        <div>
+        <div class="card-info">
           <h3>${room.name}</h3>
           <div class="flex">
             <img src="/icons/map-pin.svg" alt="">
             <p>${room.location}</p>
           </div>
-          <p>${room.bedroom} bedroom · ${room.bed} bed · ${room.guests} guests</p>
+          <div class="flex message-box">
+            <p class="user-message">placeholder messages make a long ahahh lalala and very long  oh yeahhhhhhh</p>
+            <button class="btn-ter editBtn">Edit</button>
+          </div>  
         </div>
       </div>
-    </div>  
+    </article>  
   `;
 
   return wrapper;

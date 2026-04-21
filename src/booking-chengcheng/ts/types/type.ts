@@ -29,9 +29,11 @@ export type Room = {
 
 export type Booking = {
   id: number;
-  userName: string;
-  password: string;
-  email: string;
-  checkin: string;
-  checkout: string;
+  userId: number;
+  roomId: number;
+  fromDate: string;
+  toDate: string;
+  message: string;
 }
+
+export type NewBooking = Omit<Booking, "id">;

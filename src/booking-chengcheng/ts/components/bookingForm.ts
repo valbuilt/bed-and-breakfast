@@ -13,16 +13,44 @@ export function renderBookingForm(room: Room) {
     
       <label for="checkout">Check-out-date</label>
       <input type="date" id="checkout">
+
+      <textarea class="message" placeholder="Leave a message for your host."></textarea>
     </div>
 
     <div class="form-bottom">
       <div class="price">
-        <h2>${room.pricePrNight} kr / night</h2>
+        <h2 id="finalPrice">${room.pricePrNight} kr / night</h2>
       </div>
-      <button id="confirm-booking" type="button" class="btn">Confirm booking</button>
+      <button id="confirmBtn" type="button" class="btn">Confirm booking</button>
     </div>
   `;
 
   return wrapper;
+}
 
+export function renderMobilBook(room: Room) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("mobil-book", "hidden");
+
+  wrapper.innerHTML = `
+    <h2>${room.pricePrNight} kr / night</h2>
+    <button id="openFormBtn" class="btn">Book</button>
+  `;
+
+  return wrapper;
+}
+
+export function renderModal() {
+  const wrapper = document.createElement("dialog");
+  wrapper.classList.add("dialog-window");
+
+  wrapper.innerHTML = `
+    <button id="dialog-close" class="dialog-close">x</button>
+    <div class="dialog-content">
+      <h2>🎉 Booking Confirmed!</h2>
+      <p>We can't wait to host you -- see you soon!✨</p>
+    </div>  
+  `;
+
+  return wrapper;
 }

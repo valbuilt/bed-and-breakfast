@@ -13,7 +13,6 @@ export function renderDes(room: Room) {
         <h3>Hosted by ${room.hostName}</h3>
       </div>
       <p class="host-bio">${room.hostBio}</p>
-      <button class="btn-sec">Request to book</button>
     </div>
   `;
   

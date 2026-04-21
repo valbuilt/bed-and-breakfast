@@ -66,6 +66,11 @@ ol {
   list-style: none;
 }
 
+dialog {
+  border: none;
+  padding: 0;
+}
+
 h1 {
   font-family: "Lora", serif;
   font-size: 28px;
@@ -99,6 +104,10 @@ h6 {
 p {
   font-size: 18px;
   line-height: 1.5;
+}
+
+label {
+  font-weight: 600;
 }
 
 /* --- utility --- */
@@ -347,7 +356,6 @@ nav {
 .booking-form {
   position: sticky;
   width: 320px;
-  height: 360px;
   flex-shrink: 0;
   padding: 1rem;
   border: 1.5px solid var(--color300);
@@ -357,6 +365,26 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   z-index: 9;
+}
+
+.message {
+  border: 1.5px solid var(--color300);
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.message-box {
+  background-color: var(--color200);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.user-message {
+  height: 4rem;
+  overflow: hidden;
 }
 
 .form-top,
@@ -399,6 +427,7 @@ nav {
 }
 
 .card-img {
+  flex: 0 0 6rem;
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
@@ -429,9 +458,17 @@ nav {
   margin-left: 1rem;
 }
 
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
 .dialog-window {
   max-width: 500px;
-  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 1.5rem 2rem;
   border-radius: 1rem;
   border: 1.5px solid var(--color300);
@@ -452,7 +489,7 @@ nav {
   gap: 0.25rem;
 }
 
-dialog.dialog-window::backdrop {
+.dialog-window::backdrop {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(1px);
 }
