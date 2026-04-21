@@ -1,6 +1,8 @@
 import type { NewBooking } from "../types/type";
 import { getRoomById } from "../api/getRooms.api";
 import { postBooking } from "../api/postBookings.api";
+import { renderNav } from "../components/nav";
+import { attachNavEvents } from "../features/nav.event";
 import { renderGallery } from "../components/gallery";
 import { renderRoomInfo } from "../components/roomInfo";
 import { renderDes } from "../components/description";
@@ -9,14 +11,11 @@ import { renderReviews } from "../components/reviews";
 import { renderMap } from "../components/map";
 import { renderBookingForm, renderMobilBook, renderModal } from "../components/bookingForm";
 
-const hamburger = document.getElementById("hamburger") as HTMLElement;
-const navMenu = document.querySelector(".nav-menu") as HTMLElement;
-
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("menu-active");
-});
-
 // -------------------
+
+document.body.prepend(renderNav());
+attachNavEvents();
+
 
 async function loadRoomPage(id: number) {
   const galleryContainer = document.getElementById("gallery");

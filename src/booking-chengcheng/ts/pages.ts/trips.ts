@@ -2,14 +2,12 @@ import { getRoomById } from "../api/getRooms.api";
 import { getBookingById } from "../api/getBookings.api";
 import { deleteBooking } from "../api/deleteBookings.api";
 import { renderBookingCard } from "../components/bookingCard";
+import { renderNav } from "../components/nav";
+import { attachNavEvents } from "../features/nav.event";
 
 
-const hamburger = document.getElementById("hamburger") as HTMLElement;
-const navMenu = document.querySelector(".nav-menu") as HTMLElement;
-
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("menu-active");
-});
+document.body.prepend(renderNav());
+attachNavEvents();
 
 // ---------------------
 const upcomingContent = document.getElementById("upcomingContent");
