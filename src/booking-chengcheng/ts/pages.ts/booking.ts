@@ -1,8 +1,11 @@
 import type { NewBooking } from "../types/type";
+
 import { getRoomById } from "../api/getRooms.api";
 import { postBooking } from "../api/postBookings.api";
+
 import { renderNav } from "../components/nav";
 import { attachNavEvents } from "../features/nav.event";
+
 import { renderGallery } from "../components/gallery";
 import { renderRoomInfo } from "../components/roomInfo";
 import { renderDes } from "../components/description";
@@ -123,7 +126,10 @@ async function loadRoomPage(id: number) {
   }
 }
 
-loadRoomPage(1);
+const params = new URLSearchParams(window.location.search);
+const id = Number(params.get("id"));
+
+loadRoomPage(id);
 
 
 
