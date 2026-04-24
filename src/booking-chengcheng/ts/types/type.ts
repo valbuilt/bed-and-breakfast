@@ -1,18 +1,23 @@
+export type User = {
+  id: number;
+  userName: string;
+  password: string;
+  email: string;
+}
+
 export type Review = {
   id: number;
   username: string;
   userAvatar: string;
   date: string; 
-  rating: number; 
   comment: string;
-  created: string; 
-  updated: string; 
 };
 
 export type Room = {
   id: number;
   name: string;
   location: string;
+  locationShort: string;
   bedroom: number;
   bed: number;
   guests: number;

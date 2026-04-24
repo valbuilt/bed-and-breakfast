@@ -18,7 +18,7 @@ export function renderBookingCard(room: Room) {
           <h3>${room.name}</h3>
           <div class="flex">
             <img src="/icons/map-pin.svg" alt="">
-            <p>${room.location}</p>
+            <p>${room.locationShort}</p>
           </div>
           <div class="flex message-box">
             <p class="user-message">placeholder messages make a long ahahh lalala and very long  oh yeahhhhhhh</p>
