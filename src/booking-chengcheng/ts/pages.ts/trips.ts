@@ -1,4 +1,5 @@
 import { getAllBookings } from "../api/getBookings.api";
+import { editBooking } from "../api/patchBookings.api";
 import { deleteBooking } from "../api/deleteBookings.api";
 import { renderBookingCard } from "../components/bookingCard";
 import { renderNav } from "../components/nav";
@@ -62,7 +63,5 @@ async function loadBookings() {
     console.log(err);
   }
 }
-
-
 
 loadBookings();

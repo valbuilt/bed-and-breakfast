@@ -3,13 +3,13 @@ export type User = {
   userName: string;
   password: string;
   email: string;
-}
+};
 
 export type Review = {
   id: number;
   username: string;
   userAvatar: string;
-  date: string; 
+  date: string;
   comment: string;
 };
 
@@ -42,6 +42,10 @@ export type Booking = {
   fromDate: string;
   toDate: string;
   message: string;
-}
+};
 
 export type NewBooking = Omit<Booking, "id">;
+
+export type NewMessage = {
+  message: string;
+};
