@@ -1,27 +1,27 @@
-import type { Room } from "../types/type";
+import type { Booking } from "../types/type";
 
-export function renderBookingCard(room: Room) {
+export function renderBookingCard(booking: Booking) {
   const wrapper = document.createElement("div");
   wrapper.classList.add("content");
 
   wrapper.innerHTML = `
     <article class="card">
       <div class="card-top">
-        <h3 class="card-date">09.05.2026 - 14.05.2026</h3>
-        <button class="btn-sec deleteBtn"}">Delete</button>
+        <h3 class="card-date">${booking.fromDate} - ${booking.toDate}</h3>
+        <button class="btn-sec deleteBtn" data-booking-id="${booking.id}">Delete</button>
       </div>
       <div class="flex-m">
         <div class="card-img">
-          <img src="${room.img[0]}" alt="room hero image">
+          <img src="${booking.img}" alt="room hero image">
         </div>
         <div class="card-info">
-          <h3>${room.name}</h3>
+          <h3>${booking.name}</h3>
           <div class="flex">
             <img src="/icons/map-pin.svg" alt="">
-            <p>${room.locationShort}</p>
+            <p>${booking.locationShort}</p>
           </div>
           <div class="flex message-box">
-            <p class="user-message">placeholder messages make a long ahahh lalala and very long  oh yeahhhhhhh</p>
+            <p class="user-message">${booking.message}</p>
             <button class="btn-ter editBtn">Edit</button>
           </div>  
         </div>

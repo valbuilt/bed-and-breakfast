@@ -367,26 +367,6 @@ nav {
   z-index: 9;
 }
 
-.message {
-  border: 1.5px solid var(--color300);
-  border-radius: 0.5rem;
-  padding: 0.25rem 1rem;
-  margin-block: 1rem 2rem;
-}
-
-.message-box {
-  background-color: var(--color200);
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.user-message {
-  height: 4rem;
-  overflow: hidden;
-}
-
 .form-top,
 .form-bottom {
   display: flex;
@@ -413,7 +393,7 @@ nav {
 
 /* --- trips page --- */
 .content {
-  max-width: 500px;
+  max-width: 560px;
   margin: 2rem auto;
 }
 
@@ -460,7 +440,30 @@ nav {
 
 .card-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
   min-width: 0;
+}
+
+.message {
+  border: 1.5px solid var(--color300);
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.message-box {
+  background-color: var(--color200);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.user-message {
+  height: 3.25rem;
+  overflow: hidden;
 }
 
 .dialog-window {

@@ -36,6 +36,9 @@ export type Booking = {
   id: number;
   userId: number;
   roomId: number;
+  img: string;
+  name: string;
+  locationShort: string;
   fromDate: string;
   toDate: string;
   message: string;

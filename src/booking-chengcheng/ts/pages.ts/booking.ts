@@ -54,7 +54,7 @@ async function loadRoomPage(id: number) {
     const map = renderMap(room);
     const bookingForm = renderBookingForm(room);
     const mobilBookFoot = renderMobilBook(room);
-     const dialogWindow = renderModal();
+    const dialogWindow = renderModal();
 
     roomInfoContainer.replaceChildren(roomInfo);
     galleryContainer.replaceChildren(gallery);
@@ -109,6 +109,9 @@ async function loadRoomPage(id: number) {
       const newBooking: NewBooking = {
         userId: 888,
         roomId: id,
+        img: room.img[0],
+        name: room.name,
+        locationShort: room.locationShort,
         fromDate: checkInInput!.value,
         toDate: checkOutInput!.value,
         message: message.value,
