@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "uu:booking": "pa11y http://localhost:5173/booking-chengcheng.html",
-    "uu:trips": "pa11y http://localhost:5173/trips-chengcheng.html"
+    "uu:booking": "pa11y http://localhost:5173/booking.html",
+    "uu:trips": "pa11y http://localhost:5173/trips.html"
   },
   "devDependencies": {
     "pa11y": "^9.1.1",

@@ -58,10 +58,43 @@ async function loadBookings() {
 
     upcomingContent.replaceChildren(...upcomingCards);
     pastContent.replaceChildren(...pastCards);
-
   } catch (err) {
     console.log(err);
   }
 }
 
 loadBookings();
+
+// -------------------
+
+const wrapper = document.querySelector(".wrapper");
+
+wrapper?.addEventListener("click", async (e) => {
+  const target = e.target as HTMLElement;
+  const card = target.closest(".card") as HTMLElement;
+  const bookingId = Number(target.dataset.bookingId);
+
+  if (!card || !bookingId) return;
+
+  if (target.classList.contains("editBtn")) {
+    const userMessage = card.querySelector(".user-message") as HTMLElement;
+    const newMessage = prompt("Write a new message to host");
+
+    if (newMessage !== null) {
+      userMessage.textContent = newMessage;
+
+      try {
+        await editBooking({ message: newMessage }, bookingId);
+      } catch (error) {
+        console.error("Failed to update message:", error);
+      }
+    }
+  } else if (target.classList.contains("deleteBtn")) {
+    try {
+      await deleteBooking(bookingId);
+      card.remove();
+    } catch (error) {
+      console.error("Failed to delete booking:", error);
+    }
+  }
+});

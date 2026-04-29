@@ -22,7 +22,7 @@ export function renderBookingCard(booking: Booking) {
           </div>
           <div class="flex message-box">
             <p class="user-message">${booking.message}</p>
-            <button class="btn-ter editBtn">Edit</button>
+            <button class="btn-ter editBtn" data-booking-id="${booking.id}">Edit</button>
           </div>  
         </div>
       </div>
