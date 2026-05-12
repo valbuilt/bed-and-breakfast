@@ -100,7 +100,7 @@ async function loadRoomPage(id: number) {
       const totalPrice = totalNights * room.pricePrNight;
    
       finalPrice!.innerHTML = `
-        <h2>${totalNights} nights · ${totalPrice} kr</h2>
+        <h2>${totalNights} ${totalNights > 1 ? "nights" : "night"} · ${totalPrice} kr</h2>
       `;
     }
 
