@@ -39,7 +39,7 @@ async function loadBookings() {
   try {
     const allBookings = await getAllBookings();
     const userBookings = allBookings.filter(
-      (booking) => booking.userId === 888,
+      (booking) => booking.userId > 0,
     );
     const today = new Date();
     today.setHours(0, 0, 0, 0);
