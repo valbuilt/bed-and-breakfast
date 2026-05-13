@@ -1,5 +1,4 @@
-
-
+//this is where we store the user search data
 let location;
 let arrivalDate;
 let departureDate;
@@ -7,25 +6,30 @@ let nrGuests;
 let nrRooms;
 let nrBeds;
 
-// const hamburger = document.getElementById("hamburger") as HTMLElement;
-let input = document.getElementById("location-input");
-let searchButton = document.getElementById("searchButton");
+const locationInput = document.getElementById("location-input");
+const searchButton = document.getElementById("searchButton");
+const arrivalDateInput = document.querySelector(".inputContainerDateLeft");
+const departureDateInput = document.querySelector(".inputContainerDateRight");
+const nrGuestsInput = document.getElementById("nr-guests");
+const nrRoomsInput = document.getElementById("nr-rooms");
+const nrBedsInput = document.getElementById("nr-beds");
 
-searchButton.addEventListener("click", collectLocation);
+searchButton.addEventListener("click", dataCollection);
 
-function collectLocation(e) {
-  //   let input = "Vatican is working";
+function dataCollection(e) {
   e.preventDefault();
 
-  const location (document.getElementById("location-input")as HTMLInputElement).value.trim();
-  const dates (document.querySelector(".inputContainerDateLeft") as HTMLInputElement).value;
-  //should I split into arrival and departure dates? 
-  const nrGuests //
-  // e.target.value;
-  // console.log("click is working");
+  location = locationInput.value;
+  arrivalDate = arrivalDateInput.value;
+  departureDate = departureDateInput.value;
+  nrGuests = nrGuestsInput.value;
+  nrRooms = nrRoomsInput.value;
+  nrBeds = nrBedsInput.value;
+
+  console.log("location", location);
+  console.log("Arrival", arrivalDate);
+  console.log("Departure", departureDate);
+  console.log("nr of guests", nrGuests);
+  console.log("nr of rooms", nrRooms);
+  console.log("nr of beds", nrBeds);
 }
-
-// collectLocation();
-
-
-
