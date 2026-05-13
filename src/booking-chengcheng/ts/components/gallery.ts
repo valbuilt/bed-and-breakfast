@@ -3,7 +3,7 @@ import type { Room } from "../types/type";
 export function renderGallery(room: Room) {
   const wrapper = document.createElement("div");
   wrapper.classList.add("gallery");
-  
+
   room.img.forEach((src, index) => {
     const item = document.createElement("div");
     item.classList.add("gallery-item");
@@ -24,22 +24,21 @@ export function renderGallery(room: Room) {
     wrapper.appendChild(item);
   });
 
-  return wrapper;
-}
-
   // "See all photos" button
-  const showMoreBtn = document.getElementById("showMoreBtn");
-  const moreImages = document.querySelectorAll(".moreImages");
+  const showMoreBtn = wrapper.querySelector("#showMoreBtn");
+  const moreImages = wrapper.querySelectorAll(".moreImages");
 
   if (showMoreBtn && moreImages.length > 0) {
     let isExpanded = false;
 
     showMoreBtn.addEventListener("click", () => {
       isExpanded = !isExpanded;
-      moreImages.forEach((img) =>
-        img.classList.toggle("hidden", !isExpanded),
-      );
+      moreImages.forEach((img) => img.classList.toggle("hidden", !isExpanded));
       showMoreBtn.textContent = isExpanded ? "Show less" : "See all photos";
     });
-  };
+  }
+
+  return wrapper;
+}
+
  
