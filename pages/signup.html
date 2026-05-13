@@ -16,7 +16,6 @@
       <nav>
         <a href="/" class="logo">StayWell</a>
         <ul class="nav-menu">
-          <li><a>Favorites</a></li>
           <li><a href="/pages/trips.html">Trips</a></li>
           <li><a href="/pages/signup.html">Login</a></li>
         </ul>
@@ -32,17 +31,17 @@
             <div class="input-group">
               <div class="input-field" id="nameField">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Name" id="userName"/>
               </div>
 
               <div class="input-field">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" id="userEmail"/>
               </div>
 
               <div class="input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" id="userPassword"/>
               </div>
               <p>Forgot Password? <a href="#">Click here!</a></p>
             </div>
@@ -53,6 +52,12 @@
               </button>
             </div>
           </form>
+          <!-- Chengcheng added 2 buttons to distinguish UI switching and logic function -->
+          <br>
+          <div>
+            <button id="signupSubmit" class="btn">Create Account</button>
+            <button id="signinSubmit" class="btn">Login</button>
+          </div>
         </div>
       </div>
     </main>

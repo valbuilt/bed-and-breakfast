@@ -353,6 +353,10 @@ nav {
   margin-top: 1rem;
 }
 
+.review-swipe > * {
+  flex: 1;
+}
+
 .booking-form {
   position: sticky;
   width: 320px;

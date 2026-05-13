@@ -19,6 +19,7 @@ import { renderBookingForm, renderMobilBook, renderModal } from "../components/b
 document.body.prepend(renderNav());
 attachNavEvents();
 
+const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
 
 async function loadRoomPage(id: number) {
   const galleryContainer = document.getElementById("gallery");
@@ -71,35 +72,37 @@ async function loadRoomPage(id: number) {
     const finalPrice = document.getElementById("finalPrice") as HTMLElement;
 
     function calculatePrice() {
-      const checkIn = new Date(checkInInput!.value);
-      const checkOut = new Date(checkOutInput!.value);
-      
+      finalPrice.innerHTML = "";
+
+      if (!checkInInput.value) return;
+
+      const checkIn = new Date(checkInInput.value);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
 
-      if (!checkInInput.value || !checkOutInput.value) {
-        return;
-      }
-
-      if (checkIn <= today) {
+      if (checkIn < today) {
         finalPrice.innerHTML = `
           <p style="color:red;">Please select a check-in date from today onward.</p>
         `;
-          return;
-        }
+        return;
+      }
+
+      if (!checkOutInput.value) return;
+
+      const checkOut = new Date(checkOutInput.value);
 
       if (checkOut <= checkIn) {
         finalPrice.innerHTML = `
           <p style="color:red;">Please select a check-out date after the check-in date.</p>
-        `;
-          return;
-        }
+      `;
+        return;
+      }
 
       const totalNights = (checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24);
 
       const totalPrice = totalNights * room.pricePrNight;
-   
-      finalPrice!.innerHTML = `
+
+      finalPrice.innerHTML = `
         <h2>${totalNights} ${totalNights > 1 ? "nights" : "night"} · ${totalPrice} kr</h2>
       `;
     }
@@ -126,7 +129,7 @@ async function loadRoomPage(id: number) {
       mobilBook.style.display = "flex";
 
       const newBooking: NewBooking = {
-        userId: 1,
+        userId: currentUser.id,
         roomId: id,
         img: room.img[0],
         name: room.name,
