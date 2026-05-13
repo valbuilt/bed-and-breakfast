@@ -6,7 +6,7 @@ export function renderRoomInfo(room: Room) {
   wrapper.innerHTML = `
     <h1>${room.name}</h1>
     <div class="flex">
-      <img src="/icons/map-pin.svg">
+      <img src="/icons/map-pin.svg" alt="">
       <p>${room.location}</p>
     </div>
     <p>

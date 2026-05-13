@@ -9,7 +9,7 @@ export function renderDes(room: Room) {
     <p>${room.description}</p>
     <div class="host-description">
       <div class="flex-s host-title">
-        <img src="${room.hostAvatar}">
+        <img src="${room.hostAvatar}" alt="">
         <h3>Hosted by ${room.hostName}</h3>
       </div>
       <p class="host-bio">${room.hostBio}</p>
