@@ -1,10 +1,10 @@
 //this is where we store the user search data
-let location;
-let arrivalDate;
-let departureDate;
-let nrGuests;
-let nrRooms;
-let nrBeds;
+let location: string;
+let arrivalDate: number;
+let departureDate: number;
+let nrGuests: number;
+let nrRooms: number;
+let nrBeds: number;
 
 const locationInput = document.getElementById("location-input");
 const searchButton = document.getElementById("searchButton");
@@ -14,17 +14,17 @@ const nrGuestsInput = document.getElementById("nr-guests");
 const nrRoomsInput = document.getElementById("nr-rooms");
 const nrBedsInput = document.getElementById("nr-beds");
 
-searchButton.addEventListener("click", dataCollection);
+searchButton?.addEventListener("click", dataCollection);
 
 function dataCollection(e) {
   e.preventDefault();
 
-  location = locationInput.value;
-  arrivalDate = arrivalDateInput.value;
-  departureDate = departureDateInput.value;
-  nrGuests = nrGuestsInput.value;
-  nrRooms = nrRoomsInput.value;
-  nrBeds = nrBedsInput.value;
+  location = locationInput?.value;
+  arrivalDate = arrivalDateInput?.value;
+  departureDate = departureDateInput?.value;
+  nrGuests = nrGuestsInput?.value;
+  nrRooms = nrRoomsInput?.value;
+  nrBeds = nrBedsInput?.value;
 
   console.log("location", location);
   console.log("Arrival", arrivalDate);
