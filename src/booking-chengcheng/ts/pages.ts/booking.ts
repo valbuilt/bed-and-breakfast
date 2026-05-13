@@ -19,6 +19,7 @@ import { renderBookingForm, renderMobilBook, renderModal } from "../components/b
 document.body.prepend(renderNav());
 attachNavEvents();
 
+const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
 
 async function loadRoomPage(id: number) {
   const galleryContainer = document.getElementById("gallery");
@@ -68,20 +69,41 @@ async function loadRoomPage(id: number) {
 
     const checkInInput = document.getElementById("checkin") as HTMLInputElement;
     const checkOutInput = document.getElementById("checkout") as HTMLInputElement;
+    const finalPrice = document.getElementById("finalPrice") as HTMLElement;
 
     function calculatePrice() {
-      const checkIn = new Date(checkInInput!.value);
-      const checkOut = new Date(checkOutInput!.value);
-      const totalNights =
-        (checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24);
+      finalPrice.innerHTML = "";
 
-      if (totalNights <= 0) return;
+      if (!checkInInput.value) return;
+
+      const checkIn = new Date(checkInInput.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      if (checkIn < today) {
+        finalPrice.innerHTML = `
+          <p style="color:red;">Please select a check-in date from today onward.</p>
+        `;
+        return;
+      }
+
+      if (!checkOutInput.value) return;
+
+      const checkOut = new Date(checkOutInput.value);
+
+      if (checkOut <= checkIn) {
+        finalPrice.innerHTML = `
+          <p style="color:red;">Please select a check-out date after the check-in date.</p>
+      `;
+        return;
+      }
+
+      const totalNights = (checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24);
 
       const totalPrice = totalNights * room.pricePrNight;
 
-      const finalPrice = document.getElementById("finalPrice");
-      finalPrice!.innerHTML = `
-        <h2>${totalNights} nights · ${totalPrice} kr</h2>
+      finalPrice.innerHTML = `
+        <h2>${totalNights} ${totalNights > 1 ? "nights" : "night"} · ${totalPrice} kr</h2>
       `;
     }
 
@@ -107,7 +129,7 @@ async function loadRoomPage(id: number) {
       mobilBook.style.display = "flex";
 
       const newBooking: NewBooking = {
-        userId: 888,
+        userId: currentUser.id,
         roomId: id,
         img: room.img[0],
         name: room.name,

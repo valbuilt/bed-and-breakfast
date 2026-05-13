@@ -4,7 +4,6 @@ export function renderNav () {
   nav.innerHTML = `
     <a href="/" class="logo">StayWell</a>
     <ul class="nav-menu">
-      <li><a>Favorites</a></li>
       <li><a href="/pages/trips.html">Trips</a></li>
       <li><a href="/pages/signup.html">Login</a></li>
     </ul>

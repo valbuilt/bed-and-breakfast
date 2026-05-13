@@ -5,6 +5,8 @@ export type User = {
   email: string;
 };
 
+export type NewUser = Omit<User, "id">;
+
 export type Review = {
   id: number;
   username: string;

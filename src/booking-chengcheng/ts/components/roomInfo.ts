@@ -9,7 +9,11 @@ export function renderRoomInfo(room: Room) {
       <img src="/icons/map-pin.svg">
       <p>${room.location}</p>
     </div>
-    <p>${room.bedroom} bedroom · ${room.bed} bed · ${room.guests} guests</p>
+    <p>
+      ${room.bedroom} ${room.bedroom > 1 ? "bedrooms" : "bedroom"} ·
+      ${room.bed} ${room.bed > 1 ? "beds" : "bed"} ·
+      ${room.guests} ${room.guests > 1 ? "guests" : "guest"}
+    </p>
     `;
   return wrapper;  
 }
