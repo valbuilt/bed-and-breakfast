@@ -51,6 +51,13 @@
 body {
   background-color: var(--bg);
   font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 header {
@@ -301,6 +308,54 @@ header {
   line-height: 1.6;
 }
 
+/* Search Results Page */
+
+h1 {
+  padding-left: 1rem;
+}
+
+p {
+  padding-left: 1rem;
+}
+
+.resultCard {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 1rem;
+}
+
+.resultCardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.resultCardPhoto {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.resultCardInfo .icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.resultCardInfo p {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Footer */
 footer {
   background-color: var(--bg);
   color: var(--text);

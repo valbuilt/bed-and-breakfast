@@ -1,22 +1,30 @@
 //this is where we store the user search data
 let location: string;
-let arrivalDate: number;
-let departureDate: number;
-let nrGuests: number;
-let nrRooms: number;
-let nrBeds: number;
+let arrivalDate: string;
+let departureDate: string;
+let nrGuests: string;
+let nrRooms: string;
+let nrBeds: string;
 
-const locationInput = document.getElementById("location-input");
-const searchButton = document.getElementById("searchButton");
-const arrivalDateInput = document.querySelector(".inputContainerDateLeft");
-const departureDateInput = document.querySelector(".inputContainerDateRight");
-const nrGuestsInput = document.getElementById("nr-guests");
-const nrRoomsInput = document.getElementById("nr-rooms");
-const nrBedsInput = document.getElementById("nr-beds");
+const locationInput = document.getElementById(
+  "location-input",
+) as HTMLInputElement;
+const searchButton = document.getElementById(
+  "searchButton",
+) as HTMLInputElement;
+const arrivalDateInput = document.querySelector(
+  ".inputContainerDateLeft",
+) as HTMLInputElement;
+const departureDateInput = document.querySelector(
+  ".inputContainerDateRight",
+) as HTMLInputElement;
+const nrGuestsInput = document.getElementById("nr-guests") as HTMLInputElement;
+const nrRoomsInput = document.getElementById("nr-rooms") as HTMLInputElement;
+const nrBedsInput = document.getElementById("nr-beds") as HTMLInputElement;
 
 searchButton?.addEventListener("click", dataCollection);
 
-function dataCollection(e) {
+function dataCollection(e: Event) {
   e.preventDefault();
 
   location = locationInput?.value;
@@ -26,10 +34,14 @@ function dataCollection(e) {
   nrRooms = nrRoomsInput?.value;
   nrBeds = nrBedsInput?.value;
 
-  console.log("location", location);
-  console.log("Arrival", arrivalDate);
-  console.log("Departure", departureDate);
-  console.log("nr of guests", nrGuests);
-  console.log("nr of rooms", nrRooms);
-  console.log("nr of beds", nrBeds);
+  const params = new URLSearchParams({
+    location: location,
+    arrival: arrivalDate,
+    departure: departureDate,
+    guests: nrGuests,
+    rooms: nrRooms,
+    beds: nrBeds,
+  });
+
+  window.location.href = `searchResults.html?${params.toString()}`;
 }

@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/homepage-valerie/style.css" />
-    <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css">
+    <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css" />
     <title>StayWell Home Page</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
-<body>
+  <body>
     <nav>
       <a href="/" class="logo">StayWell</a>
       <ul class="nav-menu">
@@ -20,195 +26,210 @@
         <li><a href="/pages/signup.html">Login</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <img src="/icons/menu.svg" alt="">
+        <img src="/icons/menu.svg" alt="" />
       </button>
     </nav>
-    </header>
-    
-      <div class="hero">
-      <img src="assets/bed and breakfast hero3.jpg" alt="Breakfast served in bed" />
-      
-       <div class="searchDetailsContainer">
-    <form>
-      <div class="searchLeft">
-        <h3>Stay at your favourite place</h3>
+    <!-- </header> -->
 
-        <div class="inputContainer">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="1em" 
-          height="1em" 
-          viewBox="0 0 24 24">
-          <title xmlns="">location</title>
-          <path fill="currentColor" d="M16 10c0-2.21-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4s4-1.79 4-4m-6 0c0-1.1.9-2 2-2s2 .9 2 2s-.9 2-2 2s-2-.9-2-2"/><path 
-          fill="currentColor" d="M11.42 21.81c.17.12.38.19.58.19s.41-.06.58-.19c.3-.22 7.45-5.37 7.42-11.82c0-4.41-3.59-8-8-8s-8 3.59-8 8c-.03 6.44 7.12 11.6 7.42 11.82M12 4c3.31 0 6 2.69 6 6c.02 4.44-4.39 8.43-6 9.74c-1.61-1.31-6.02-5.29-6-9.74c0-3.31 2.69-6 6-6"/>
-        </svg>
-        <div class="autocomplete-wrapper">
-          <input type="text" id="location-input" placeholder="Location" autocomplete="off" />
-        </div>
-        </div>
+    <div class="hero">
+      <img
+        src="assets/bed and breakfast hero3.jpg"
+        alt="Breakfast served in bed"
+      />
 
-        <div class="inputContainer">
-        <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        stroke-width="2" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-        class="feather feather-calendar">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-        <line x1="16" y1="2" x2="16" y2="6"></line>
-        <line x1="8" y1="2" x2="8" y2="6"></line>
-        <line x1="3" y1="10" x2="21" y2="10"></line>
-      </svg>
-         <div class="inputContainerDate">
-          <input type="date" class="inputContainerDateLeft"/>
-          <input type="date" class="inputContainerDateRight"/>
-        </div>
-        </div>
-        
-      
-        <div class="inputContainer">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="24" height="24" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          stroke-width="2" stroke-linecap="round" 
-          stroke-linejoin="round" class="feather feather-users">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg> 
-          <input type="number" placeholder="Guests" min="1" id="nr-guests" />
-        </div>
-       
+      <div class="searchDetailsContainer">
+        <form>
+          <div class="searchLeft">
+            <h3>Stay at your favourite place</h3>
+
+            <div class="inputContainer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <title xmlns="">location</title>
+                <path
+                  fill="currentColor"
+                  d="M16 10c0-2.21-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4s4-1.79 4-4m-6 0c0-1.1.9-2 2-2s2 .9 2 2s-.9 2-2 2s-2-.9-2-2"
+                />
+                <path
+                  fill="currentColor"
+                  d="M11.42 21.81c.17.12.38.19.58.19s.41-.06.58-.19c.3-.22 7.45-5.37 7.42-11.82c0-4.41-3.59-8-8-8s-8 3.59-8 8c-.03 6.44 7.12 11.6 7.42 11.82M12 4c3.31 0 6 2.69 6 6c.02 4.44-4.39 8.43-6 9.74c-1.61-1.31-6.02-5.29-6-9.74c0-3.31 2.69-6 6-6"
+                />
+              </svg>
+
+              <div class="inputContainer">
+                <input type="text" id="location-input" placeholder="Location" />
+              </div>
+            </div>
+
+            <div class="inputContainer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-calendar"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <div class="inputContainerDate">
+                <input type="date" class="inputContainerDateLeft" />
+                <input type="date" class="inputContainerDateRight" />
+              </div>
+            </div>
+
+            <div class="inputContainer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-users"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <input
+                type="number"
+                placeholder="Guests"
+                min="1"
+                id="nr-guests"
+              />
+            </div>
+          </div>
+
+          <div class="searchRight">
+            <h3>Stay over comfortably</h3>
+
+            <div class="inputContainer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <title xmlns="">room</title>
+                <path
+                  fill="currentColor"
+                  d="M440 424V88h-88V13.005L88 58.522V424H16v32h86.9L352 490.358V120h56v336h88v-32Zm-120 29.642l-200-27.586V85.478L320 51Z"
+                />
+                <path fill="currentColor" d="M256 232h32v64h-32z" />
+              </svg>
+              <input type="number" placeholder="Rooms" min="1" id="nr-rooms" />
+            </div>
+
+            <div class="inputContainer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5em"
+                height="1.5em"
+                viewBox="0 0 24 24"
+              >
+                <title xmlns="">bed-outline-sharp</title>
+                <path
+                  fill="currentColor"
+                  d="M3 18v-7h1V7h16v4h1v7h-1v-2H4v2zm9.5-7H19V8h-6.5zM5 11h6.5V8H5zm-1 4h16v-3H4zm16 0H4z"
+                />
+              </svg>
+              <input type="number" placeholder="Beds" min="1" id="nr-beds" />
+            </div>
+
+            <button type="submit" id="searchButton">Search</button>
+          </div>
+        </form>
       </div>
+    </div>
 
-      <div class="searchRight">
-        <h3>Stay over comfortably</h3>
+    <main>
+      <div class="homeCardContainer">
+        <div class="homeCard">
+          <a href="pages/booking.html?id=2" class="categoryLink">
+            <div class="cardImage">
+              <img
+                src="./assets/bed and breakfast hero.jpg"
+                alt="Nearby Rooms"
+              />
+            </div>
 
-        <div class="inputContainer">
-          <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="1em" 
-          height="1em" 
-          viewBox="0 0 512 512"
-          >
-          <title xmlns="">room</title>
-          <path 
-          fill="currentColor" 
-          d="M440 424V88h-88V13.005L88 58.522V424H16v32h86.9L352 490.358V120h56v336h88v-32Zm-120 29.642l-200-27.586V85.478L320 51Z"
-          />
-          <path 
-          fill="currentColor" 
-          d="M256 232h32v64h-32z"
-          />
-        </svg>
-          <input type="number" placeholder="Rooms" min="1" id="nr-rooms" />
+            <div class="cardContent">
+              <h2>Nearby</h2>
+              <p>Find stays close to your location.</p>
+
+              <div class="cardCTA">
+                <span class="ctaButton">Explore</span>
+              </div>
+            </div>
+          </a>
         </div>
 
-        <div class="inputContainer">
-         <svg 
-         xmlns="http://www.w3.org/2000/svg" 
-         width="1.5em" height="1.5em" 
-         viewBox="0 0 24 24"
-         >
-         <title xmlns="">bed-outline-sharp</title>
-         <path 
-         fill="currentColor" 
-         d="M3 18v-7h1V7h16v4h1v7h-1v-2H4v2zm9.5-7H19V8h-6.5zM5 11h6.5V8H5zm-1 4h16v-3H4zm16 0H4z"
-         />
-        </svg>
-          <input type="number" placeholder="Beds" min="1" id="nr-beds"/>
+        <div class="homeCard">
+          <a href="pages/booking.html?id=1" class="categoryLink">
+            <div class="cardImage">
+              <img src="./room-photos/room-1/1.jpeg" alt="Popular Rooms" />
+            </div>
+
+            <div class="cardContent">
+              <h2>Popular</h2>
+              <p>Rooms with the best ratings.</p>
+
+              <div class="cardCTA">
+                <span class="ctaButton">Explore</span>
+              </div>
+            </div>
+          </a>
         </div>
-        
-        <button type="submit" id="searchButton">Search</button>
       </div>
-    </form>
-  </div>
-</div>
-   
-
-
- <main>
-
-  <div class="homeCardContainer">
-
-    <div class="homeCard">
-      <a href="pages/booking.html?id=2" class="categoryLink">
-        
-        <div class="cardImage">
-          <img src="./assets/bed and breakfast hero.jpg" alt="Nearby Rooms" />
+      <section class="welcomeSection">
+        <div class="container">
+          <h2>Discover affordable Bed & Breakfasts with character</h2>
+          <p>
+            No matter if you're looking for something nearby or the most loved
+            spots, we make sure you stay well!
+          </p>
         </div>
+      </section>
+    </main>
 
-        <div class="cardContent">
-          <h2>Nearby</h2>
-          <p>Find stays close to your location.</p>
+    <footer>
+      <div class="footerContainer">
+        <p class="copyright">&copy; 2026 StayWell. All rights reserved.</p>
 
-          <div class="cardCTA">
-            <span class="ctaButton">Explore</span>
+        <div class="socialWrapper">
+          <h3>Follow us on</h3>
+          <div class="socialIcons">
+            <img
+              src="public/icons/instagram.svg"
+              alt="Instagram"
+              class="footerIcon"
+            />
+            <img
+              src="public/icons/facebook.svg"
+              alt="Facebook"
+              class="footerIcon"
+            />
           </div>
         </div>
-
-      </a>
-    </div>
-
-    <div class="homeCard">
-      <a href="pages/booking.html?id=1" class="categoryLink">
-        
-        <div class="cardImage">
-          <img src="./room-photos/room-1/1.jpeg" alt="Popular Rooms" />
-        </div>
-
-        <div class="cardContent">
-          <h2>Popular</h2>
-          <p>Rooms with the best ratings.</p>
-
-          <div class="cardCTA">
-            <span class="ctaButton">Explore</span>
-          </div>
-        </div>
-
-      </a>
-    </div>
-
-  </div> 
-  <section class="welcomeSection"> 
-    <div class="container"> 
-      <h2>Discover affordable Bed & Breakfasts with character</h2> 
-      <p> No matter if you're looking for something nearby or the most loved spots, we make sure you stay well! </p> 
-    </div> 
-  </section>
-
-</main>
-
-   <footer>
-  <div class="footerContainer">
-
-    <p class="copyright">
-      &copy; 2026 StayWell. All rights reserved.
-    </p>
-
-    <div class="socialWrapper">
-      <h3>Follow us on</h3>
-      <div class="socialIcons">
-        <img src="public/icons/instagram.svg" alt="Instagram" class="footerIcon" />
-        <img src="public/icons/facebook.svg" alt="Facebook" class="footerIcon" />
       </div>
-    </div>
+    </footer>
 
-  </div>
-</footer>
-
-  <script type="module" src="/src/homepage-valerie/index.ts"></script>
+    <script type="module" src="/src/homepage-valerie/index.ts"></script>
   </body>
-
- 
 </html>
