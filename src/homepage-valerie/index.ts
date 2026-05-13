@@ -1,3 +1,5 @@
+import "./ts/searchForm";
+
 const hamburger = document.getElementById("hamburger") as HTMLElement;
 const navMenu = document.querySelector(".nav-menu") as HTMLElement;
 

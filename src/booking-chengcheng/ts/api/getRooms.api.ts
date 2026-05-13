@@ -7,9 +7,8 @@ export async function getRoomById(id: number): Promise<Room> {
     if (!res.ok) {
       throw new Error(`Room with id ${id} not found (status ${res.status})`);
     }
-     
-    return await res.json();
 
+    return await res.json();
   } catch (error) {
     throw error;
   }

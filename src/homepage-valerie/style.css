@@ -73,7 +73,7 @@ header {
   height: auto;
 }
 
-.searchBox {
+.searchDetailsContainer {
   position: absolute;
   bottom: 200px;
   left: 50%;
@@ -84,47 +84,72 @@ header {
   display: flex;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   z-index: 3;
-  max-width: 600px;
+  max-width: 650px;
   width: 90%;
 }
 
-.searchBox form {
+.searchDetailsContainer form {
   display: flex;
   width: 100%;
-  gap: 20px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 
-.searchBox h3 {
+.searchDetailsContainer input {
+  padding: 10px 20px 10px 40px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  font-size: var(--text-md);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.inputContainer svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.inputContainer input {
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  box-sizing: border-box;
+}
+
+.inputContainerDate {
+  display: flex;
+}
+
+.inputContainerDateLeft {
+  /* border: 5px solid green; */
+  border: 3px dashed green;
+  /* border-right: none; */
+}
+
+.searchDetailsContainer h3 {
   font-size: var(--text-md);
   font-weight: var(--font-bold);
 }
 
 .searchLeft,
 .searchRight {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex: 1;
-  min-width: 0;
 }
 
-.divider {
-  width: 1px;
-  background-color: var(--accent);
-  align-self: stretch;
-}
-
-.searchBox input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--accent);
-  font-size: var(--text-md);
-}
-
-.searchBox button {
-  margin-top: 10px;
+.searchDetailsContainer button {
   padding: 12px 24px;
   font-size: var(--text-md);
   font-weight: var(--font-bold);
@@ -134,9 +159,10 @@ header {
   color: var(--accent-inverse);
   cursor: pointer;
   transition: all 0.25s ease;
+  width: 100%;
 }
 
-.searchBox button:hover {
+.searchDetailsContainer button:hover {
   background-color: #a33300;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
@@ -150,17 +176,13 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  .searchBox form {
+  .searchDetailsContainer form {
     flex-direction: column;
     gap: 10px;
   }
 }
 
-.divider {
-  display: none;
-}
-
-.searchBox button {
+.searchDetailsContainer button {
   width: 100%;
 }
 
@@ -174,7 +196,7 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
-  justify-content: center;
+  justify-items: center;
   margin: -4rem auto 4rem auto;
   max-width: 700px;
   position: relative;
@@ -191,6 +213,7 @@ header {
   transition: transform 0.25s ease;
   width: 100%;
   max-width: 300px;
+  justify-self: center;
 }
 
 .homeCard a {
@@ -317,8 +340,8 @@ footer {
 }
 
 .footerIcon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25%;
   margin: 5px;
   transition: transform 0.2s ease;
 }
