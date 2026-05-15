@@ -394,19 +394,6 @@ p {
   display: block;
 }
 
-/* Responsive Result Card  */
-@media screen and (max-width: 768px) {
-  .resultCard {
-    flex-direction: column;
-    max-width: 95%;
-  }
-
-  .resultCardPhoto {
-    width: 100%;
-    height: 200px;
-  }
-}
-
 /* Filter panel */
 
 .resultsLayout {
@@ -477,6 +464,65 @@ p {
 
 .filterPanel button:hover {
   background-color: #a33300;
+}
+
+@media screen and (max-width: 768px) {
+  .resultCard {
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .resultCardPhoto {
+    width: 100%;
+    height: 200px;
+  }
+
+  .resultsLayout {
+    flex-direction: column;
+  }
+
+  .resultsRight {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .filterPanel {
+    position: static;
+  }
+}
+
+/* Favourites page */
+
+.favouritesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 450px));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.favouriteCard {
+  background-color: var(--bg);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.favouriteCard:hover {
+  transform: translateY(-4px);
+}
+
+.favouriteCardPhoto {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.favouriteCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
 }
 
 /* Footer */

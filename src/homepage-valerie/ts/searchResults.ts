@@ -1,3 +1,6 @@
+import { attachNavEvents } from "../../booking-chengcheng/ts/features/nav.event.ts";
+attachNavEvents();
+
 const params = new URLSearchParams(window.location.search);
 
 const searchLocation = params.get("location") ?? "";

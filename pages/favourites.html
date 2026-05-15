@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/homepage-valerie/style.css" />
+    <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css" />
+    <title>Search Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>My Favourites</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">StayWell</a>
+      <ul class="nav-menu">
+        <li><a href="/pages/trips.html">Trips</a></li>
+        <li><a href="/pages/favourites.html">Favourites</a></li>
+        <li><a href="/pages/signup.html">Login</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <img src="/icons/menu.svg" alt="" />
+      </button>
+    </nav>
+
+    <main>
+      <h1>My Favourites</h1>
+      <p></p>
+      <div id="favourites-container" class="favouritesGrid"></div>
+    </main>
+
+    <footer>
+      <div class="footerContainer">
+        <p class="copyright">&copy; 2026 StayWell. All rights reserved.</p>
+
+        <div class="socialWrapper">
+          <h3>Follow us on</h3>
+          <div class="socialIcons">
+            <img
+              src="public/icons/instagram.svg"
+              alt="Instagram"
+              class="footerIcon"
+            />
+            <img
+              src="public/icons/facebook.svg"
+              alt="Facebook"
+              class="footerIcon"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/homepage-valerie/ts/favourites.ts"></script>
+    <script
+      type="module"
+      src="/src/homepage-valerie/ts/searchResults.ts"
+    ></script>
+    <script
+      type="module"
+      src="/src/booking-chengcheng/ts/components/nav.ts"
+    ></script>
+  </body>
+</html>

@@ -1,29 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css">
-  <title>Trips page</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css" />
+    <title>Trips page</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="toggle-container">
+          <button id="upcomingBtn" class="toggle-btn active">Upcoming</button>
+          <button id="pastBtn" class="toggle-btn">Past Trips</button>
+        </div>
 
-  <main>
-    <div class="wrapper">
-      <div class="toggle-container">
-        <button id="upcomingBtn" class="toggle-btn active">Upcoming</button>
-        <button id="pastBtn" class="toggle-btn">Past Trips</button>
+        <div id="upcomingContent"></div>
+
+        <div id="pastContent" class="content hidden"></div>
       </div>
+    </main>
 
-      <div id="upcomingContent"></div>
-
-      <div id="pastContent" class="content hidden"></div>
-
-    </div>
-
-  </main>
-
-  <script type="module" src="/src/booking-chengcheng/ts/pages.ts/trips.ts"></script>
-  
-</body>
+    <script
+      type="module"
+      src="/src/booking-chengcheng/ts/pages.ts/trips.ts"
+    ></script>
+  </body>
 </html>

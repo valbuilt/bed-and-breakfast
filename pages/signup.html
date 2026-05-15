@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/signup-anders/styles.css" />
-    <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css">
+    <link rel="stylesheet" href="/src/booking-chengcheng/css/style.css" />
     <script
       src="https://kit.fontawesome.com/ee1d2b81ed.js"
       crossorigin="anonymous"
@@ -17,10 +17,11 @@
         <a href="/" class="logo">StayWell</a>
         <ul class="nav-menu">
           <li><a href="/pages/trips.html">Trips</a></li>
+          <li><a href="/pages/favourites.html">Favourites</a></li>
           <li><a href="/pages/signup.html">Login</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Open menu">
-          <img src="/icons/menu.svg" alt="Menu icon">
+          <img src="/icons/menu.svg" alt="Menu icon" />
         </button>
       </nav>
 
@@ -31,17 +32,21 @@
             <div class="input-group">
               <div class="input-field" id="nameField">
                 <i class="fa-regular fa-user"></i>
-                <input type="text" placeholder="Name" id="userName"/>
+                <input type="text" placeholder="Name" id="userName" />
               </div>
 
               <div class="input-field">
                 <i class="fa-regular fa-envelope"></i>
-                <input type="email" placeholder="Email" id="userEmail"/>
+                <input type="email" placeholder="Email" id="userEmail" />
               </div>
 
               <div class="input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" id="userPassword"/>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="userPassword"
+                />
               </div>
               <p>Forgot Password? <a href="#">Click here!</a></p>
             </div>
@@ -53,7 +58,7 @@
             </div>
           </form>
           <!-- Chengcheng added 2 buttons to distinguish UI switching and logic function -->
-          <br>
+          <br />
           <div>
             <button id="signupSubmit" class="btn">Create Account</button>
             <button id="signinSubmit" class="btn">Login</button>
