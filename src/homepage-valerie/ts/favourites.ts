@@ -1,3 +1,5 @@
+// Valerie Vasiljev
+
 import { attachNavEvents } from "../../booking-chengcheng/ts/features/nav.event.ts";
 attachNavEvents();
 

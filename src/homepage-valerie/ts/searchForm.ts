@@ -1,3 +1,5 @@
+// Valerie Vasiljev
+
 let location: string;
 let arrivalDate: string;
 let departureDate: string;
