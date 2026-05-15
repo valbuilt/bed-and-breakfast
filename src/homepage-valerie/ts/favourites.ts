@@ -62,9 +62,10 @@ async function fetchFavourites() {
   document.querySelector("p")!.innerHTML =
     `${favouriteRooms.length} ${favouriteRooms.length === 1 ? "place" : "places"} saved`;
 
-  favouriteRooms.forEach((room: any) => {
-    container.innerHTML += `
-      <a href="pages/booking.html?id=${room.id}" class="roomCardLink">
+  container.innerHTML = favouriteRooms
+    .map(
+      (room: any) => `
+      <a href="/pages/booking.html?id=${room.id}" class="roomCardLink">
         <div class="favouriteCard">
           <div class="resultCardImageContainer">
             <img class="favouriteCardPhoto" src="${room.img[0]}" alt="Photo of ${room.name}" />
@@ -82,8 +83,9 @@ async function fetchFavourites() {
           </div>
         </div>
       </a>
-    `;
-  });
+    `,
+    )
+    .join("");
 
   favouriteRooms.forEach((room: any) => {
     const checkbox = document.getElementById(

@@ -19,7 +19,7 @@ console.log(loggedInUser);
 
 function createRoomCard(room: any) {
   return `
-    <a href="pages/booking.html?id=${room.id}" class="roomCardLink">
+    <a href="/pages/booking.html?id=${room.id}" class="roomCardLink">
       <div class="resultCard">
         <div class="resultCardImageContainer">
           <img class="resultCardPhoto" src="${room.img[0]}" alt="Photo of ${room.name}" />
@@ -98,8 +98,11 @@ async function fetchRooms() {
   document.querySelector("p")!.innerHTML =
     `${filteredRooms.length} ${filteredRooms.length === 1 ? "place" : "places"} available`;
 
+  container.innerHTML = filteredRooms
+    .map((room: any) => createRoomCard(room))
+    .join("");
+
   filteredRooms.forEach((room: any) => {
-    container.innerHTML += createRoomCard(room);
     const favouriteInput = document.getElementById(room.id);
     favouriteInput?.addEventListener("change", toggleFavourite);
   });
@@ -177,8 +180,11 @@ filterButton?.addEventListener("click", async () => {
   document.querySelector("p")!.innerHTML =
     `${refiltered.length} ${refiltered.length === 1 ? "place" : "places"} available`;
 
+  container.innerHTML = refiltered
+    .map((room: any) => createRoomCard(room))
+    .join("");
+
   refiltered.forEach((room: any) => {
-    container.innerHTML += createRoomCard(room);
     const favouriteInput = document.getElementById(room.id);
     favouriteInput?.addEventListener("change", toggleFavourite);
   });
