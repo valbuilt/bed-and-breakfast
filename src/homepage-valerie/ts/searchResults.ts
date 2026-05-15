@@ -14,7 +14,7 @@ console.log(loggedInUser);
 
 function createRoomCard(room: any) {
   return `
-    <a href="pages/booking.html?id=${room.id}" class="categoryLink">
+    <a href="pages/booking.html?id=${room.id}" class="roomCardLink">
       <div class="resultCard">
         <div class="resultCardImageContainer">
           <img class="resultCardPhoto" src="${room.img[0]}" alt="Photo of ${room.name}" />
@@ -118,19 +118,65 @@ async function fetchRooms() {
   });
 }
 
-async function myFavourites() {
-  console.log("favourites called");
-  const response = await fetch("http://localhost:3000/api/favourites", {
-    method: "POST",
+const filterPrice = document.getElementById("filter-price") as HTMLInputElement;
+const priceDisplay = document.getElementById("price-display")!;
+
+filterPrice.addEventListener("input", () => {
+  priceDisplay.innerHTML = `${filterPrice.value} kr`;
+});
+
+const filterButton = document.getElementById("filter-button");
+
+filterButton?.addEventListener("click", async () => {
+  const filterArrival = (
+    document.getElementById("filter-arrival") as HTMLInputElement
+  ).value;
+  const filterDeparture = (
+    document.getElementById("filter-departure") as HTMLInputElement
+  ).value;
+  const filterGuests = (
+    document.getElementById("filter-guests") as HTMLInputElement
+  ).value;
+  const filterPrice = (
+    document.getElementById("filter-price") as HTMLInputElement
+  ).value;
+
+  await fetch("http://localhost:3000/api/bookings/101", {
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer thisisit12345`,
     },
     body: JSON.stringify({
-      favourites: true,
+      fromDate: filterArrival,
+      toDate: filterDeparture,
     }),
   });
-  console.log("end of favourite function");
-}
+
+  console.log("Booking updated!");
+
+  const response = await fetch("http://localhost:3000/api/rooms");
+  const data = await response.json();
+
+  const refiltered = data.filter((room: any) => {
+    return (
+      room.location.toLowerCase().includes(searchLocation.toLowerCase()) &&
+      room.guests >= Number(filterGuests) &&
+      room.pricePrNight <= Number(filterPrice)
+    );
+  });
+
+  const container = document.getElementById("results-container")!;
+  container.innerHTML = "";
+
+  document.querySelector("p")!.innerHTML =
+    `${refiltered.length} ${refiltered.length === 1 ? "place" : "places"} available`;
+
+  refiltered.forEach((room: any) => {
+    container.innerHTML += createRoomCard(room);
+    const favouriteInput = document.getElementById(room.id);
+    favouriteInput?.addEventListener("change", toggleFavourite);
+  });
+});
 
 fetchRooms();

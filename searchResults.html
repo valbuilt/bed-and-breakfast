@@ -36,9 +36,54 @@
     </div>
 
     <main>
-      <h1></h1>
-      <p></p>
-      <div id="results-container"></div>
+      <div class="resultsLayout">
+        <div class="resultsLeft">
+          <h1></h1>
+          <p></p>
+          <div id="results-container"></div>
+        </div>
+
+        <div class="resultsRight">
+          <div class="filterPanel">
+            <h2>Adjust your search</h2>
+            <div class="filterItem">
+              <label for="filter-arrival">Arrival</label>
+              <input type="date" id="filter-arrival" />
+            </div>
+            <div class="filterItem">
+              <label for="filter-departure">Departure</label>
+              <input type="date" id="filter-departure" />
+            </div>
+            <div class="filterItem">
+              <label for="filter-guests">Guests</label>
+              <input type="number" id="filter-guests" min="1" />
+            </div>
+
+            <div class="filterItem">
+              <label for="filter-price">Max price per night</label>
+              <input
+                type="range"
+                id="filter-price"
+                min="0"
+                max="5000"
+                value="5000"
+                list="price-markers"
+              />
+              <datalist id="price-markers">
+                <option value="0"></option>
+                <option value="1000"></option>
+                <option value="2000"></option>
+                <option value="3000"></option>
+                <option value="4000"></option>
+                <option value="5000"></option>
+              </datalist>
+              <p id="price-display">5000 kr</p>
+            </div>
+
+            <button id="filter-button">Apply</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>

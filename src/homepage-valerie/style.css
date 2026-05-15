@@ -318,11 +318,15 @@ p {
   padding-left: 1rem;
 }
 
+.roomCardLink {
+  display: contents;
+}
+
 .resultCard {
   background-color: var(--bg);
   display: flex;
   flex-direction: row;
-  max-width: 55%;
+  max-width: 65%;
   gap: 1rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -403,7 +407,80 @@ p {
   }
 }
 
+/* Filter panel */
+
+.resultsLayout {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.resultsLeft {
+  flex: 1;
+}
+
+.resultsRight {
+  width: 250px;
+  flex-shrink: 0;
+  margin-right: 3rem;
+}
+
+.filterPanel {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.filterPanel h2 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+}
+
+.filterItem label {
+  font-size: var(--text-md);
+  font-weight: var(--font-medium);
+}
+
+.filterItem input {
+  padding: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: var(--text-md);
+}
+
+.filterItem input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  padding: 0;
+}
+
+.filterPanel button {
+  padding: 1rem;
+  background-color: var(--accent);
+  color: var(--accent-inverse);
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filterPanel button:hover {
+  background-color: #a33300;
+}
+
 /* Footer */
+
 footer {
   background-color: var(--bg);
   color: var(--text);
