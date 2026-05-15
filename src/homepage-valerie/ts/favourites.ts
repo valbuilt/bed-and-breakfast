@@ -1,6 +1,8 @@
 import { attachNavEvents } from "../../booking-chengcheng/ts/features/nav.event.ts";
 attachNavEvents();
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const loggedInUser = JSON.parse(localStorage.getItem("currentUser") ?? "{}");
 
 async function toggleFavourite(event: Event) {
@@ -12,7 +14,7 @@ async function toggleFavourite(event: Event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer thisisit12345`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         userId: loggedInUser.id,
@@ -30,7 +32,7 @@ async function toggleFavourite(event: Event) {
       await fetch(`http://localhost:3000/api/favourites/${favourite.id}`, {
         method: "DELETE",
         headers: {
-          Authorization: `Bearer thisisit12345`,
+          Authorization: `Bearer ${apiKey}`,
         },
       });
       window.location.reload();
