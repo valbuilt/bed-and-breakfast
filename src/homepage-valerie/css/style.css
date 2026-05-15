@@ -493,6 +493,27 @@ p {
   }
 }
 
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Favourites page */
 
 .favouritesGrid {

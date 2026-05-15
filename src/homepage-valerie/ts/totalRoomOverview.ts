@@ -67,10 +67,11 @@ async function toggleFavourite(event: Event) {
 }
 
 async function fetchAllRooms() {
+  const container = document.getElementById("results-container")!;
+  container.innerHTML = '<div class="spinner"></div>';
+  await new Promise((resolve) => setTimeout(resolve, 2000)); // added artificial delay so that we can see it spin
   const response = await fetch("http://localhost:3000/api/rooms");
   const data = await response.json();
-
-  const container = document.getElementById("results-container")!;
 
   document.querySelector("h1")!.innerHTML = "All accommodations";
   document.querySelector("p")!.innerHTML =
