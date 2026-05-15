@@ -1,4 +1,5 @@
-//this is where we store the user search data
+// Valerie Vasiljev
+
 let location: string;
 let arrivalDate: string;
 let departureDate: string;
@@ -22,9 +23,11 @@ const nrGuestsInput = document.getElementById("nr-guests") as HTMLInputElement;
 const nrRoomsInput = document.getElementById("nr-rooms") as HTMLInputElement;
 const nrBedsInput = document.getElementById("nr-beds") as HTMLInputElement;
 
-searchButton?.addEventListener("click", dataCollection);
+const form = document.querySelector("form") as HTMLFormElement;
+form?.addEventListener("submit", dataCollection);
 
 function dataCollection(e: Event) {
+  console.log("search clicked");
   e.preventDefault();
 
   location = locationInput?.value;
@@ -43,5 +46,5 @@ function dataCollection(e: Event) {
     beds: nrBeds,
   });
 
-  window.location.href = `searchResults.html?${params.toString()}`;
+  window.location.href = `/pages/searchResults.html?${params.toString()}`;
 }

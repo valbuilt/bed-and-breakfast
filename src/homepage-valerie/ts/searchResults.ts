@@ -1,5 +1,9 @@
+// Valerie Vasiljev
+
 import { attachNavEvents } from "../../booking-chengcheng/ts/features/nav.event.ts";
 attachNavEvents();
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const params = new URLSearchParams(window.location.search);
 
@@ -17,7 +21,7 @@ console.log(loggedInUser);
 
 function createRoomCard(room: any) {
   return `
-    <a href="pages/booking.html?id=${room.id}" class="roomCardLink">
+    <a href="/pages/booking.html?id=${room.id}" class="roomCardLink">
       <div class="resultCard">
         <div class="resultCardImageContainer">
           <img class="resultCardPhoto" src="${room.img[0]}" alt="Photo of ${room.name}" />
@@ -47,7 +51,7 @@ async function toggleFavourite(event: Event) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer thisisit12345`,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         userId: loggedInUser.id,
@@ -67,7 +71,7 @@ async function toggleFavourite(event: Event) {
       await fetch(`http://localhost:3000/api/favourites/${favourite.id}`, {
         method: "DELETE",
         headers: {
-          Authorization: `Bearer thisisit12345`,
+          Authorization: `Bearer ${apiKey}`,
         },
       });
       console.log("removed from favourites");
@@ -96,8 +100,11 @@ async function fetchRooms() {
   document.querySelector("p")!.innerHTML =
     `${filteredRooms.length} ${filteredRooms.length === 1 ? "place" : "places"} available`;
 
+  container.innerHTML = filteredRooms
+    .map((room: any) => createRoomCard(room))
+    .join("");
+
   filteredRooms.forEach((room: any) => {
-    container.innerHTML += createRoomCard(room);
     const favouriteInput = document.getElementById(room.id);
     favouriteInput?.addEventListener("change", toggleFavourite);
   });
@@ -148,7 +155,7 @@ filterButton?.addEventListener("click", async () => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer thisisit12345`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
       fromDate: filterArrival,
@@ -175,8 +182,11 @@ filterButton?.addEventListener("click", async () => {
   document.querySelector("p")!.innerHTML =
     `${refiltered.length} ${refiltered.length === 1 ? "place" : "places"} available`;
 
+  container.innerHTML = refiltered
+    .map((room: any) => createRoomCard(room))
+    .join("");
+
   refiltered.forEach((room: any) => {
-    container.innerHTML += createRoomCard(room);
     const favouriteInput = document.getElementById(room.id);
     favouriteInput?.addEventListener("change", toggleFavourite);
   });
