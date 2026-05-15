@@ -14,7 +14,8 @@ export function renderBookingForm(room: Room) {
       <label for="checkout">Check-out-date</label>
       <input type="date" id="checkout">
 
-      <textarea class="message" placeholder="Leave a message for your host."></textarea>
+      <label for="message" class="hide-label">Message</label>
+      <textarea class="message" id="message" placeholder="Leave a message for your host."></textarea>
     </div>
 
     <div class="form-bottom">
